@@ -130,8 +130,8 @@
     transition: transform 0.9s cubic-bezier(.2,.9,.3,1.1), opacity 0.9s ease;
   }
 
-  .mango-wrap.sliced .half-left  { transform: translate(-46%, 8%) rotate(-18deg); }
-  .mango-wrap.sliced .half-right { transform: translate( 46%, 8%) rotate( 18deg); }
+  .mango-wrap.sliced .half-left  { transform: translate(-22%, 4%) rotate(-14deg); }
+  .mango-wrap.sliced .half-right { transform: translate( 22%, 4%) rotate( 14deg); }
   .mango-wrap.sliced .skin-whole { opacity: 0; }
   .mango-wrap.sliced .flesh-group { opacity: 1; }
   .mango-wrap.sliced .pit { opacity: 1; transform: scale(1); }
@@ -150,7 +150,7 @@
   .fortune-card {
     position: absolute;
     left: 50%;
-    bottom: 6%;
+    bottom: -10%;
     transform: translate(-50%, 40px) scale(0.6);
     opacity: 0;
     pointer-events: none;
@@ -603,6 +603,11 @@
   }
 
   againBtn.addEventListener('click', reset);
+
+  // ?demo=1 auto-slices for screenshot/demo purposes
+  if (location.search.indexOf('demo=1') !== -1) {
+    setTimeout(slice, 400);
+  }
 
   // Pointer + touch handling on the whole stage so swipes count
   stage.addEventListener('touchstart', onStart, { passive: false });
